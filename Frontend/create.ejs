@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do-List</title>
+    <style>
+form{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+form input{
+    height: 30px;
+    border-radius: 5px;
+    box-shadow: 2px 3px #888;
+}
+h1,h2{
+    text-align: center;
+}
+button{
+    height: 30px;
+    border-radius: 5px;
+}
+.btn{
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    background-color: white;
+    color:rgb(145, 53, 232) ;
+}
+a{
+    font-size: 2rem;
+   color:white;
+    height: 30px;
+    width:20%;
+    border-radius: 5px;
+}
+article{
+    width: 20%;
+    background-color:rgb(145, 53, 232) ;
+    color: white;
+    padding: 3% 5%;
+    border-radius: 7px;
+    margin: 2% 0;
+}
+    </style>
+</head>
+<body>
+    <main>
+       <form action="/create" method="POST">
+        <h1>To-Do-List</h1>
+        <input type="text"  placeholder="What do you wanna do?" id="demo" name="text"></br>
+        <button>Add</button>
+       </form>
+           <% if(list.length === 0 ||!list){ %>
+               <h2>Start by creating a new list!</h2>
+          <%  }else{ %> 
+            
+            <ol>   
+    <article>
+        
+        <% for(const x of list){ %>
+             <li>
+                <p><%= x.list %></p> 
+                <p><%= x.date %></p>
+                </li>
+         <a href="/update/<%= x._id %>">Edit</a>
+         <form action="/del/<%=x._id%>", method="POST">
+            <button class="btn">Delete</button>
+        </form>
+        <% } %>
+        </article>
+
+        <% } %>
+    </ol>
+         
+        
+    
+    
+</body>
+</html>

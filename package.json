@@ -1,0 +1,23 @@
+{
+  "name": "to-do-list-1",
+  "version": "1.0.0",
+  "description": "To Do List with CRUD features",
+  "main": "index.js",
+  "engines":{
+    "node": "16.x"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "Emmanuel Onuorah",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "mongodb": "^4.8.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
